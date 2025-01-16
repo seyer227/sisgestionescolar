@@ -5,7 +5,7 @@ define ('USUARIO','root');
 define ('PASSWORD','');
 define ('BD','sisgestionescolar');
 
-define ('APP_NAME','SISTEMA DE GESTION ESCOLAR');
+define ('APP_NAME','Sistema Smart');
 define ('APP_URL','http://localhost/sisgestionescolar');
 define ('KEY_API_MAPS','');
 
