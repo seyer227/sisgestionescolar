@@ -54,6 +54,18 @@ include('../app/config.php');
           <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
         </div>
       </form>
+      <?php
+      session_start();
+      if (isset($_SESSION['mensaje'])) {
+        $mensaje = $_SESSION['mensaje'];
+        ?>
+        <script>
+          var mensaje = '<?=$mensaje;?>';
+          alert(mensaje);
+        </script>
+        <?php
+      }
+      ?>
     </div>
     <!-- /.login-card-body -->
   </div>
