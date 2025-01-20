@@ -20,13 +20,12 @@ foreach ($usuarios as $usuario) {
     $contador++;
 }
 
+session_start();
 if (($contador > 0) && password_verify($password, $password_tabla)) {
-    echo "los datos son correctos";
+    $_SESSION['mensaje'] = "Los datos son correctos";
     header('Location:'.APP_URL."/admin");
     exit();
 } else {
-    echo "los datos son incorrectos";
-    session_start();
     $_SESSION['mensaje'] = "Los datos son incorrectos";
     header('Location:'.APP_URL."/login");
     exit();
