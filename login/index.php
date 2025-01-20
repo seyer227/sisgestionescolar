@@ -57,17 +57,23 @@ include('../app/config.php');
         </div>
       </form>
       <?php
-      session_start();
-      if (isset($_SESSION['mensaje'])) {
-        $mensaje = $_SESSION['mensaje'];
-        ?>
-        <script>
-          var mensaje = '<?=$mensaje;?>';
-          alert(mensaje);
-        </script>
-        <?php
-      }
-      ?>
+        session_start();
+        if (isset($_SESSION['mensaje'])) {
+            $mensaje = $_SESSION['mensaje'];
+            ?>
+            <script>
+                Swal.fire({
+                    position: "top-end",
+                    icon: 'error',
+                    title: '<?= $mensaje ?>',
+                    shoConfirmButton: false,
+                    timer: 4000
+                });
+            </script>
+          <?php
+            session_destroy();
+            }
+            ?>
     </div>
     <!-- /.login-card-body -->
   </div>

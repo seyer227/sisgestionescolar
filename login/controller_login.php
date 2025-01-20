@@ -23,10 +23,13 @@ foreach ($usuarios as $usuario) {
 session_start();
 if (($contador > 0) && password_verify($password, $password_tabla)) {
     $_SESSION['mensaje'] = "Los datos son correctos";
-    header('Location:'.APP_URL."/admin");
+    session_start();
+    $_SESSION['mensaje'] = "Bienvenido al sistema";
+    $_SESSION['icono'] = "success";
+    header('Location:'.APP_URL."/admin"); // Redirige al formulario
     exit();
 } else {
     $_SESSION['mensaje'] = "Los datos son incorrectos";
-    header('Location:'.APP_URL."/login");
+    header('Location:'.APP_URL."/login"); // Redirige al formulario
     exit();
 }
