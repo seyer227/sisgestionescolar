@@ -5,7 +5,7 @@ include ('../app/config.php');
 $email = $_POST['email'];
 $password = $_POST['password']; 
 
-$sql = "SELECT * FROM usuarios WHERE email = :email AND estado = '1'";
+$sql = "SELECT * FROM usuarios WHERE email = :email  AND estado = '1'";
 $query = $pdo->prepare($sql);
 $query->bindParam(':email', $email, PDO::PARAM_STR);
 $query->execute();
@@ -26,6 +26,7 @@ if (($contador > 0) && password_verify($password, $password_tabla)) {
     session_start();
     $_SESSION['mensaje'] = "Bienvenido al sistema";
     $_SESSION['icono'] = "success";
+    $_SESSION['sesion_email'] = $email;
     header('Location:'.APP_URL."/admin"); // Redirige al formulario
     exit();
 } else {
