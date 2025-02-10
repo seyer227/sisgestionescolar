@@ -62,10 +62,10 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                 confirmButtonText: 'Eliminar',
                                 confirmButtonColor: '#3085d6',
                                 denyButtonText: 'Cancelar',
-                                denyButtonColor: '#d33',                                
+                                denyButtonColor: '#d33',
                               }).then((result) => {
                                 if (result.isConfirmed) {
-                                  var form = $('#miFormulario<?=$id_rol?>');
+                                  var form = $('#miFormulario<?= $id_rol ?>');
                                   form.submit();
                                 }
                               });
