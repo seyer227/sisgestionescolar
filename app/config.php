@@ -26,4 +26,5 @@ $dia_actual = date(format: 'd');
 $mes_actual = date(format: 'm');
 $ano_actual = date(format: 'Y');
 $hora = date(format: 'H:i:s');
+$estado = 1;
 

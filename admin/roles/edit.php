@@ -18,7 +18,7 @@ include('../../app/controllers/roles/datos_del_rol.php');
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="card card-primary">
+          <div class="card card-primary card-success">
             <div class="card-header">
               <h2 class="card-title">Datos registrados</h2>
             </div>

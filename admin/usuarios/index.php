@@ -31,7 +31,7 @@ include('../../app/controllers/usuarios/listado_de_usuarios.php');
                                     <TR>
                                         <TH>#</TH>
                                         <TH>Nombre del usuario</TH>
-                                        <TH>Rol id</TH>
+                                        <TH>Rol</TH>
                                         <TH>Email</TH>
                                         <TH>Fecha de Creación</TH>
                                         <TH>Estado</TH>
@@ -55,7 +55,7 @@ include('../../app/controllers/usuarios/listado_de_usuarios.php');
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="show.php?id=<?= $id_usuario; ?>" class="btn btn-outline-dark"><i class="bi bi-eye-fill"></i> Visualizar</a>
                                                     <a href="edit.php?id=<?= $id_usuario; ?>" type="button" class="btn btn-outline-dark "><i class="bi bi-pencil-square"></i> Modificar</a>
-                                                    <form action="<?= APP_URL; ?>/app/controllers/roles/delete.php" onclick="preguntar(event)" method="POST" id="miFormulario<?= $id_usuario; ?>">
+                                                    <form action="<?= APP_URL; ?>/app/controllers/usuarios/delete.php" onclick="preguntar(event)" method="POST" id="miFormulario<?= $id_usuario; ?>">
                                                         <input type="text" name="id_usuario" value="<?= $id_usuario; ?>" hidden>
                                                         <button type="submit" class="btn btn-outline-dark " style="border-radius: 0px"><i class="bi bi-trash-fill"></i> Eliminar</button>
                                                     </form>

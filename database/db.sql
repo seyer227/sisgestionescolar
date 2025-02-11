@@ -23,7 +23,7 @@ CREATE TABLE usuarios(
     fyh_actualizacion DATETIME null,
     estado VARCHAR(11),
 
-    FOREIGN KEY (rol_id) REFERENCES roles(id_rol) on delete cascade on update cascade
+    FOREIGN KEY (rol_id) REFERENCES roles(id_rol) on delete no action on update cascade
 )ENGINE=InnoDB;
 iNSERT INTO usuarios (nombres, rol_id, email, password, fyh_creacion, estado) 
 VALUES ('ALBERTO REYES','1', 'areyes@extmet.com','$2y$10$zSJ99LWaKh32rsWib9z9suDd1yFQBDvyNRaq.XMVkl7x9Szk/mdyis','2025-01-01 20:29:00','1');

@@ -1,15 +1,14 @@
 <?php
 include('../../../app/config.php');
 
-$nombres = $_POST['nombres'];
+$nombres = strtoupper(trim($_POST['nombres']));
 $rol_id = $_POST['rol_id'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $password_repet = $_POST['password_repet'];
 
 if ($password == $password_repet) {
-    $password = password_hash($password, PASSWORD_DEFAULT);
-    $estado_de_registro = 1; // Asumiendo que 1 es el estado activo
+    $password = password_hash($password, PASSWORD_DEFAULT); 
 
     $sentencia = $pdo->prepare("INSERT INTO usuarios (nombres,rol_id,email,password,fyh_creacion,estado) 
                                 VALUES (:nombres,:rol_id,:email,:password,:fyh_creacion,:estado)");
@@ -19,7 +18,7 @@ if ($password == $password_repet) {
     $sentencia->bindParam(':email', $email);
     $sentencia->bindParam(':password', $password);
     $sentencia->bindParam(':fyh_creacion', $fechahora);
-    $sentencia->bindParam(':estado', $estado_de_registro);
+    $sentencia->bindParam(':estado', $estado);
 
     try {
 

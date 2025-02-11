@@ -47,12 +47,12 @@ include('../../app/controllers/roles/listado_de_roles.php');
                         <div class="btn-group" role="group" aria-label="Basic example">
                           <a href="show.php?id=<?= $id_rol; ?>" class="btn btn-outline-dark"><i class="bi bi-eye-fill"></i> Visualizar</a>
                           <a href="edit.php?id=<?= $id_rol; ?>" type="button" class="btn btn-outline-dark "><i class="bi bi-pencil-square"></i> Modificar</a>
-                          <form action="<?= APP_URL; ?>/app/controllers/roles/delete.php" onclick="preguntar(event)" method="POST" id="miFormulario<?= $id_rol; ?>">
+                          <form action="<?= APP_URL; ?>/app/controllers/roles/delete.php" onclick="preguntar <?= $id_rol; ?> (event)" method="POST" id="miFormulario<?= $id_rol; ?>">
                             <input type="text" name="id_rol" value="<?= $id_rol; ?>" hidden>
                             <button type="submit" class="btn btn-outline-dark " style="border-radius: 0px"><i class="bi bi-trash-fill"></i> Eliminar</button>
                           </form>
                           <script>
-                            function preguntar(event) {
+                            function preguntar <?= $id_rol; ?> (event) {
                               event.preventDefault();
                               Swal.fire({
                                 title: 'Eliminar ',
